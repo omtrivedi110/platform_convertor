@@ -10,6 +10,8 @@ import 'package:platform_convertor/controller/pagecontoller.dart';
 import 'package:platform_convertor/controller/theme_controller.dart';
 import 'package:provider/provider.dart';
 
+import '../../modals/call_modal.dart';
+
 // ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -243,6 +245,8 @@ class HomePage extends StatelessWidget {
                               .add(
                                 Call(name: name, contact: contact, chat: email),
                               );
+                          Provider.of<Call_list>(context)
+                              .addsflist(name: name, num: contact);
                         }
                       },
                       child: const Text("Save"),

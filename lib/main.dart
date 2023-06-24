@@ -10,10 +10,14 @@ import 'package:platform_convertor/controller/theme_controller.dart';
 import 'package:platform_convertor/views/screens/cupertionhomepage.dart';
 import 'package:platform_convertor/views/screens/homepage.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'utils/routes_utils.dart';
 import 'package:device_preview/device_preview.dart';
 
-void main() {
+void main() async {
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     DevicePreview(
         builder: (context) => MultiProvider(
@@ -22,7 +26,7 @@ void main() {
                   create: (context) => Date_controller(),
                 ),
                 ChangeNotifierProvider(
-                  create: (context) => Call_list(),
+                  create: (context) => Call_list(prefs: preferences),
                 ),
                 ChangeNotifierProvider(
                   create: (context) => Theme_Controller(),

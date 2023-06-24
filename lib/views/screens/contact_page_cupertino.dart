@@ -22,12 +22,18 @@ class Call_Page extends StatelessWidget {
                       children: List.generate(
                         pro.callist.length,
                         (index) => CupertinoListTile(
-                          title: Text("${pro.callist[index].name}"),
-                          subtitle: Text("${pro.callist[index].contact}"),
-                          leading: Container(
+                          title: Text(
+                            "${pro.callist[index].name}",
+                          ),
+                          subtitle: Text(
+                            "${pro.callist[index].contact}",
+                          ),
+                          leading: SizedBox(
                             height: double.infinity,
                             width: double.infinity,
-                            child: Text("${index + 1}"),
+                            child: Text(
+                              "${index + 1}",
+                            ),
                           ),
                         ),
                       ),

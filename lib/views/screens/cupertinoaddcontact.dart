@@ -5,6 +5,7 @@ import 'package:platform_convertor/controller/ad_call_list.dart';
 import 'package:platform_convertor/controller/theme_controller.dart';
 import 'package:provider/provider.dart';
 import '../../controller/date_controller.dart';
+import '../../modals/call_modal.dart';
 
 // ignore: must_be_immutable, camel_case_types
 class Cupertino_Add_Con extends StatelessWidget {
@@ -267,6 +268,8 @@ class Cupertino_Add_Con extends StatelessWidget {
                               .callist
                               .add(Call(
                                   name: name, contact: number, chat: chat));
+                          Provider.of<Call_list>(context)
+                              .addsflist(name: name, num: number);
                         }
                       }),
                 ],
